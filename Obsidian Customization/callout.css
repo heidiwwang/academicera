@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Multi-Color Highlight Border Callouts (Targeted Parent, Standalone & Child)
+   ========================================================================== */
+
+/* 1. Base Callout Setup */
+body .callout {
+  /* Layout & Geometry */
+  position: relative !important;
+  margin-top: 1.5em !important;
+  padding: 16px 18px 14px 18px !important;
+  
+  /* Reset theme inner fills & shadows */
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  overflow: visible !important;
+
+  border: 1px solid var(--callout-border-color) !important;
+  border-left: 1px solid var(--callout-border-color) !important;
+  border-radius: var(--callout-radius, 8px) !important;
+}
+
+/* 2. Floating Header Title Tag */
+body .callout-title {
+  position: absolute !important;
+  top: 0 !important;
+  left: 14px !important;
+  transform: translateY(-50%) !important;
+  
+  /* Background mask */
+  background-color: var(--background-primary) !important;
+  padding: 0 8px !important;
+  margin: 0 !important;
+  
+  /* Reset borders & shadows */
+  border: none !important;
+  box-shadow: none !important;
+  
+  /* Color & Typography */
+  color: var(--callout-border-color, var(--color-accent, #7f6df2)) !important;
+  font-size: var(--font-smallest, 0.8em) !important;
+  font-weight: var(--font-semibold, 650) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  
+  z-index: 5 !important;
+  width: auto !important;
+  max-width: calc(100% - 28px) !important;
+  
+  /* Flex layout keeps icon, title text, and fold arrow on the same row */
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start !important;
+  column-gap: 6px !important;
+}
+
+/* Force Obsidian's inner title wrapper to wrap text naturally without pushing fold arrow down */
+body .callout-title .callout-title-inner {
+  display: inline !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  flex-shrink: 1 !important;
+}
+
+/* Force icon alignment */
+body .callout-title .callout-icon {
+  display: inline-flex !important;
+  align-self: flex-start !important;
+  flex-shrink: 0 !important;
+  margin-top: 0px !important;
+  color: var(--callout-border-color, var(--color-accent, #7f6df2)) !important;
+}
+
+/* Keep collapsible fold arrow locked on the first line */
+body .callout-title .callout-fold {
+  display: inline-flex !important;
+  align-self: flex-start !important;
+  flex-shrink: 0 !important;
+  margin-top: 2px !important;
+}
+
+/* ==========================================================================
+   3. Color Rules: Standalone vs. Child (ROYGBV)
+   ========================================================================== */
+
+/* --- Standalone Callouts (Fix: Use native Obsidian accent variables) --- */
+body .callout:not(:has(.callout)) {
+  --callout-border-color: var(--color-accent, var(--interactive-accent, #7f6df2)) !important;
+}
+
+/* --- Child Callouts (Nested inside a parent callout) -> ROYGBV Loop --- */
+
+/* 1st Child -> Red */
+body .callout .callout:nth-of-type(6n + 1) {
+  --callout-border-color: var(--color-red, #e55353) !important;
+}
+
+/* 2nd Child -> Orange */
+body .callout .callout:nth-of-type(6n + 2) {
+  --callout-border-color: var(--color-orange, #e58a30) !important;
+}
+
+/* 3rd Child -> Yellow */
+body .callout .callout:nth-of-type(6n + 3) {
+  --callout-border-color: var(--color-yellow, #dcb22a) !important;
+}
+
+/* 4th Child -> Green */
+body .callout .callout:nth-of-type(6n + 4) {
+  --callout-border-color: var(--color-green, #31b262) !important;
+}
+
+/* 5th Child -> Blue */
+body .callout .callout:nth-of-type(6n + 5) {
+  --callout-border-color: var(--color-blue, #2fa1e5) !important;
+}
+
+/* 6th Child -> Violet/Purple */
+body .callout .callout:nth-of-type(6n) {
+  --callout-border-color: var(--color-purple, #9d5bd2) !important;
+}
+
+/* 4. Strip Inner Block Fill */
+body .callout-content {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 6px 0 0 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
