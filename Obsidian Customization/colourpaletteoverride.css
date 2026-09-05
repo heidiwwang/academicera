@@ -1,0 +1,69 @@
+/* ==========================================================================
+   PALETTE OVERRIDE SNIPPET (Lavender-Gray HSLA)
+   ========================================================================== */
+
+/* 1. Global Variable Scope with High Specificity */
+:root,
+.theme-light,
+.theme-dark {
+  /* Custom Palette Variables */
+  --color-l-gray-10: hsla(275, 38%, 98%, 1);
+  --color-l-gray-20: hsla(275, 36%, 96%, 1);
+  --color-l-gray-30: hsla(275, 37%, 92%, 1);
+  --color-l-gray-40: hsla(275, 34%, 90%, 1);
+  --color-l-gray-50: hsla(275, 35%, 88%, 1);
+  --color-l-gray-60: hsla(275, 38%, 83%, 1);
+  --color-l-gray-70: hsla(275, 37%, 70%, 1);
+  --color-l-gray-80: hsla(275, 29%, 60%, 1);
+  --color-l-gray-90: hsla(275, 23%, 50%, 1);
+  --color-l-gray-100: hsla(275, 28%, 40%, 1);
+  --color-l-gray-110: hsla(275, 30%, 37%, 1);
+  --color-l-gray-120: hsla(275, 32%, 30%, 1);
+  --color-l-gray-130: hsla(275, 45%, 24%, 1);
+  --color-l-gray-140: hsla(275, 54%, 17%, 1);
+  --color-l-alpha-gray: hsla(275, 37%, 70%, 0.15);
+
+  /* Mapping to Obsidian Native Icon Variables */
+  --icon-color: var(--color-l-gray-90) !important;
+  --icon-color-hover: var(--color-l-gray-120) !important;
+  --icon-color-active: var(--color-l-gray-140) !important;
+  --icon-color-focus: var(--color-l-gray-110) !important;
+
+  --icon-bg: transparent !important;
+  --icon-bg-hover: var(--color-l-alpha-gray) !important;
+  --icon-bg-pressed: hsla(275, 37%, 70%, 0.25) !important;
+  --icon-bg-active: hsla(275, 37%, 70%, 0.20) !important;
+  --icon-bg-active-menu: hsla(275, 37%, 70%, 0.20) !important;
+}
+
+/* ==========================================================================
+   UI ELEMENT OVERRIDES
+   ========================================================================== */
+
+/* Force Clickable Icon Colors & Backgrounds */
+.clickable-icon {
+  color: var(--icon-color) !important;
+  background-color: var(--icon-bg) !important;
+}
+
+.clickable-icon:hover {
+  color: var(--icon-color-hover) !important;
+  background-color: var(--icon-bg-hover) !important;
+}
+
+.clickable-icon:active,
+.clickable-icon.has-active-menu {
+  color: var(--icon-color-active) !important;
+  background-color: var(--icon-bg-pressed) !important;
+}
+
+.clickable-icon.is-active {
+  background-color: var(--icon-bg-active) !important;
+}
+
+/* Force SVG Icon Strokes to Use Current Color */
+.clickable-icon svg,
+svg.svg-icon {
+  color: currentColor !important;
+  stroke: currentColor !important;
+}
