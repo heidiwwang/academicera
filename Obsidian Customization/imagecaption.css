@@ -1,0 +1,16 @@
+/* Targets the container of the image to allow the :after content to render */
+.image-embed[alt] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.image-embed[alt]::after {
+    content: attr(alt);
+    display: block;
+    text-align: center; /* Optional: centers the caption */
+    margin: 0.2rem 1rem 1rem 1rem;
+    font-size: 85%;
+    line-height: 1.4;
+    color: var(--text-muted); /* Using a more standard variable */
+    font-style: italic;
+}
