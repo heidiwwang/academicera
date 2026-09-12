@@ -15,3 +15,14 @@ header-includes:
   - \rhead{\thepage}
   - \renewcommand{\headrulewidth}{0pt}
 ---
+
+%% Write the assignment here %% 
+# Title of Assignment
+## Subheading 1
+
+%% Do not change this section below to ensure the References were placed on a new page %%
+\clearpage
+
+# References
+
+<div id="refs"></div>
