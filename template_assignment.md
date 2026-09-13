@@ -13,10 +13,10 @@ tags:
   - project/assignment
 csl: <% cfg.csl_path %>
 bibliography: <% cfg.bib_dir %>/<% cfg.bib_filename %>
-geometry: margin=1in
-mainfont: "Times New Roman"
-fontsize: 12pt
-linestretch: 2.0
+geometry: <% cfg.geometry %>
+mainfont: "<% cfg.mainfont %>"
+fontsize: <% cfg.fontsize %>
+linestretch: <% cfg.linestretch %>
 header-includes:
   - \renewcommand{\maketitle}{}
   - \usepackage{fancyhdr}
