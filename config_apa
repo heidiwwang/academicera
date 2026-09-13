@@ -1,16 +1,20 @@
 ---
 # Static Profile Configuration
-author_name: "Your Name"
-institution: "Your School and faculty"
-csl_path: "/path/to/apa.csl"
-bib_dir: "/path/to/bib/folder"
+author_name: "YOUR_NAME"
+institution: "YOUR_INSTITUTION_AND_FACULTY"
+csl_path: "/path/to/your/apa.csl"
+bib_dir: "/path/to/your/references/directory"
 
-# Assignment Specific Configuration (Edit before creating a new assignment)
-doc_title: "Title"
-course_code: "Code"
-instructor: "Dr. Name"
-due_date: "Date"
-bib_filename: "biblio_file.bib"
+# Course & Assignment Configuration (Edit per assignment/course requirement)
+doc_title: "ASSIGNMENT_TITLE"
+course_code: "COURSE_CODE_AND_NAME"
+instructor: "INSTRUCTOR_NAME"
+due_date: "YYYY-MM-DD"
+bib_filename: "your_references.bib"
+
+# Specify Layout & Typography
+geometry: "margin=1in"
+mainfont: "Times New Roman"
+fontsize: "12pt"
+linestretch: 2.0
 ---
-  
-Keep thing file somewhere in your vault's configuration so you can update it before exporting your assignment
